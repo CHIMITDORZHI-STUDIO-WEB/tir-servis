@@ -3,12 +3,13 @@ import { useApp } from "@/contexts/AppContext";
 
 const GallerySection: React.FC = () => {
   const { t } = useApp();
+  const base = import.meta.env.BASE_URL;
   const items = [
-    { label: t("gal.item1"), image: "/assets/gallery/1.jpg" },
-    { label: t("gal.item2"), image: "/assets/gallery/2.jpg" },
-    { label: t("gal.item3"), image: "/assets/gallery/3.jpg" },
-    { label: t("gal.item4"), image: "/assets/gallery/4.jpg" },
-    { label: t("gal.item5"), image: "/assets/gallery/5.jpg" },
+    { label: t("gal.item1"), image: `${base}assets/gallery/1.jpg` },
+    { label: t("gal.item2"), image: `${base}assets/gallery/2.jpg` },
+    { label: t("gal.item3"), image: `${base}assets/gallery/3.jpg` },
+    { label: t("gal.item4"), image: `${base}assets/gallery/4.jpg` },
+    { label: t("gal.item5"), image: `${base}assets/gallery/5.jpg` },
     { label: t("gal.item6"), image: null },
   ];
 
