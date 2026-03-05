@@ -21,6 +21,134 @@ export const LANG_NAMES: Record<Lang, string> = {
 type Translations = Record<string, Record<Lang, string>>;
 
 const t: Translations = {
+
+  // --- NEW NAV & SERVICES ---
+  "nav.repairTrucks": { pl: "Naprawa ciężarówek", ru: "Ремонт грузовиков", en: "Truck Repair", fr: "Réparation de camions", de: "LKW-Reparatur", ua: "Ремонт вантажівок" },
+  "nav.repairTrailers": { pl: "Naprawa naczep", ru: "Ремонт прицепов", en: "Trailer Repair", fr: "Réparation de remorques", de: "Auflieger-Reparatur", ua: "Ремонт причепів" },
+  "nav.repairTractors": { pl: "Naprawa ciągników", ru: "Ремонт тягачей", en: "Tractor Repair", fr: "Réparation de tracteurs", de: "Sattelzug-Reparatur", ua: "Ремонт тягачів" },
+  "nav.repairBody": { pl: "Naprawa blacharska", ru: "Ремонт кузова", en: "Body Repair", fr: "Carrosserie", de: "Karosseriereparatur", ua: "Ремонт кузова" },
+  "nav.laserCleaning": { pl: "Czyszczenie laserowe", ru: "Лазерная очистка", en: "Laser Cleaning", fr: "Nettoyage laser", de: "Laserreinigung", ua: "Лазерне очищення" },
+  "nav.otherServices": { pl: "Pozostałe usługi", ru: "Прочие услуги", en: "Other Services", fr: "Autres Services", de: "Weitere Leistungen", ua: "Інші послуги" },
+  "nav.allServices": { pl: "Wszystkie usługi", ru: "Все услуги", en: "All Services", fr: "Tous les services", de: "Alle Dienstleistungen", ua: "Всі послуги" },
+
+  // Service Page UI
+  "srv.scopeOfWork": { pl: "Zakres prac", ru: "Объём работ", en: "Scope of Work", fr: "Étendue des travaux", de: "Arbeitsumfang", ua: "Обсяг робіт" },
+  "srv.advantages": { pl: "Zalety", ru: "Преимущества", en: "Advantages", fr: "Avantages", de: "Vorteile", ua: "Переваги" },
+  "srv.orderService": { pl: "Zamów usługę", ru: "Заказать услугу", en: "Order Service", fr: "Commander le service", de: "Dienstleistung beauftragen", ua: "Замовити послугу" },
+
+  // --- Computer Diagnostics ---
+  "srv.cd.title": { pl: "Diagnostyka komputerowa", ru: "Компьютерная диагностика", en: "Computer Diagnostics", fr: "Diagnostic Informatique", de: "Computerdiagnose", ua: "Комп'ютерна діагностика" },
+  "srv.cd.desc": { pl: "Profesjonalna diagnostyka komputerowa samochodów ciężarowych przy użyciu najnowszego oprogramowania i sprzętu diagnostycznego.", ru: "Профессиональная компьютерная диагностика грузовых автомобилей с использованием новейшего ПО и диагностического оборудования.", en: "Professional computer diagnostics for trucks using the latest software and diagnostic equipment.", fr: "Diagnostic informatique professionnel pour camions utilisant les derniers logiciels et équipements de diagnostic.", de: "Professionelle Computerdiagnose für LKW mit modernster Software und Diagnosegeräten.", ua: "Професійна комп'ютерна діагностика вантажних автомобілів з використанням новітнього ПЗ та діагностичного обладнання." },
+  "srv.cd.s1": { pl: "Odczyt i kasowanie błędów", ru: "Считывание и сброс ошибок", en: "Reading and clearing faults", fr: "Lecture et effacement des défauts", de: "Fehler auslesen und löschen", ua: "Зчитування та скидання помилок" },
+  "srv.cd.s2": { pl: "Diagnostyka silnika i układu wydechowego", ru: "Диагностика двигателя и выхлопной системы", en: "Engine and exhaust system diagnostics", fr: "Diagnostic du moteur et du système d'échappement", de: "Diagnose von Motor und Abgasanlage", ua: "Діагностика двигуна та вихлопної системи" },
+  "srv.cd.s3": { pl: "Diagnostyka układu hamulcowego", ru: "Диагностика тормозной системы", en: "Brake system diagnostics", fr: "Diagnostic du système de freinage", de: "Diagnose des Bremssystems", ua: "Діагностика гальмівної системи" },
+  "srv.cd.s4": { pl: "Diagnostyka zawieszenia pneumatycznego", ru: "Диагностика пневмоподвески", en: "Air suspension diagnostics", fr: "Diagnostic de la suspension pneumatique", de: "Diagnose der Luftfederung", ua: "Діагностика пневмопідвіски" },
+  "srv.cd.s5": { pl: "Diagnostyka skrzyni biegów", ru: "Диагностика коробки передач", en: "Gearbox diagnostics", fr: "Diagnostic de la boîte de vitesses", de: "Getriebediagnose", ua: "Діагностика коробки передач" },
+  "srv.cd.s6": { pl: "Programowanie i kalibracja sterowników", ru: "Программирование и калибровка блоков управления", en: "Programming and calibration of control units", fr: "Programmation et calibrage des unités de contrôle", de: "Programmierung und Kalibrierung von Steuergeräten", ua: "Програмування та калібрування блоків управління" },
+  "srv.cd.a1": { pl: "Nowoczesny sprzęt diagnostyczny", ru: "Современное диагностическое оборудование", en: "Modern diagnostic equipment", fr: "Équipement de diagnostic moderne", de: "Moderne Diagnosegeräte", ua: "Сучасне діагностичне обладнання" },
+  "srv.cd.a2": { pl: "Obsługa wszystkich marek ciężarówek", ru: "Обслуживание всех марок грузовиков", en: "Service for all truck brands", fr: "Service pour toutes les marques de camions", de: "Service für alle LKW-Marken", ua: "Обслуговування всіх марок вантажівок" },
+  "srv.cd.a3": { pl: "Szybkie wykrywanie usterek", ru: "Быстрое выявление неисправностей", en: "Quick fault detection", fr: "Détection rapide des pannes", de: "Schnelle Fehlererkennung", ua: "Швидке виявлення несправностей" },
+  "srv.cd.a4": { pl: "Doświadczeni diagności", ru: "Опытные диагносты", en: "Experienced diagnosticians", fr: "Diagnostiqueurs expérimentés", de: "Erfahrene Diagnostiker", ua: "Досвідчені діагностични" },
+
+  // --- Engine Repair ---
+  "srv.er.title": { pl: "Naprawa silnika", ru: "Ремонт двигателя", en: "Engine Repair", fr: "Réparation de moteur", de: "Motorreparatur", ua: "Ремонт двигуна" },
+  "srv.er.desc": { pl: "Kompleksowa naprawa i regeneracja silników samochodów ciężarowych wszystkich marek.", ru: "Комплексный ремонт и восстановление двигателей грузовых автомобилей всех марок.", en: "Comprehensive repair and regeneration of engines for trucks of all brands.", fr: "Réparation complète et régénération de moteurs pour camions de toutes marques.", de: "Umfassende Reparatur und Überholung von LKW-Motoren aller Marken.", ua: "Комплексний ремонт та відновлення двигунів вантажних автомобілів усіх марок." },
+  "srv.er.s1": { pl: "Wymiana i regeneracja głowicy", ru: "Замена и восстановление ГБЦ", en: "Cylinder head replacement and regeneration", fr: "Remplacement et régénération de la culasse", de: "Austausch und Überholung des Zylinderkopfes", ua: "Заміна та відновлення ГБЦ" },
+  "srv.er.s2": { pl: "Naprawa układu paliwowego", ru: "Ремонт топливной системы", en: "Fuel system repair", fr: "Réparation du système de carburant", de: "Reparatur des Kraftstoffsystems", ua: "Ремонт паливної системи" },
+  "srv.er.s3": { pl: "Wymiana rozrządu", ru: "Замена ГРМ", en: "Timing gear replacement", fr: "Remplacement de la distribution", de: "Zahnriemenwechsel", ua: "Заміна ГРМ" },
+  "srv.er.s4": { pl: "Naprawa turbosprężarek", ru: "Ремонт турбокомпрессоров", en: "Turbocharger repair", fr: "Réparation de turbocompresseurs", de: "Turbolader-Reparatur", ua: "Ремонт турбокомпресорів" },
+  "srv.er.s5": { pl: "Wymiana uszczelnień i uszczelek", ru: "Замена уплотнений и прокладок", en: "Replacement of seals and gaskets", fr: "Remplacement des joints d'étanchéité", de: "Austausch von Dichtungen", ua: "Заміна ущільнень та прокладок" },
+  "srv.er.s6": { pl: "Regulacja zaworów", ru: "Регулировка клапанов", en: "Valve adjustment", fr: "Réglage des soupapes", de: "Ventileinstellung", ua: "Регулювання клапанів" },
+  "srv.er.a1": { pl: "Oryginalne części lub zamienniki wysokiej jakości", ru: "Оригинальные запчасти, а также их аналоги", en: "Original parts and high-quality alternatives", fr: "Pièces d'origine et alternatives de haute qualité", de: "Originalteile und hochwertige Alternativen", ua: "Оригінальні запчастини, а також їх аналоги" },
+  "srv.er.a2": { pl: "Gwarancja na wykonane prace", ru: "Гарантия на выполненные работы", en: "Warranty on completed work", fr: "Garantie sur les travaux effectués", de: "Garantie auf ausgeführte Arbeiten", ua: "Гарантія на виконані роботи" },
+  "srv.er.a3": { pl: "Krótkie terminy realizacji", ru: "Короткие сроки выполнения", en: "Short turnaround times", fr: "Délais d'exécution courts", de: "Kurze Ausführungszeiten", ua: "Короткі терміни виконання" },
+  "srv.er.a4": { pl: "Konkurencyjne ceny", ru: "Конкурентные цены", en: "Competitive prices", fr: "Prix compétitifs", de: "Aussagekräftige Preise", ua: "Конкурентні ціни" },
+
+  // --- Chassis (Ходовая) ---
+  "srv.cr.title": { pl: "Naprawa podwozia", ru: "Ремонт ходовой", en: "Chassis Repair", fr: "Réparation de châssis", de: "Fahrwerksreparatur", ua: "Ремонт ходової" },
+  "srv.cr.desc": { pl: "Kompleksowa naprawa zawieszenia i podwozia zwiększająca bezpieczeństwo.", ru: "Комплексный ремонт подвески и ходовой части для безопасной эксплуатации.", en: "Comprehensive suspension and chassis repair for safe operation.", fr: "Réparation complète de la suspension et du châssis.", de: "Umfassende Reparatur von Fahrwerk und Aufhängung.", ua: "Комплексний ремонт підвіски та ходової частини." },
+  "srv.cr.s1": { pl: "Wymiana amortyzatorów", ru: "Замена амортизаторов", en: "Shock absorber replacement", fr: "Remplacement des amortisseurs", de: "Stoßdämpferwechsel", ua: "Заміна амортизаторів" },
+  "srv.cr.s2": { pl: "Naprawa zawieszenia", ru: "Ремонт подвески", en: "Suspension repair", fr: "Réparation de suspension", de: "Aufhängungsreparatur", ua: "Ремонт підвіски" },
+  "srv.cr.s3": { pl: "Wymiana sworzni i drążków kierowniczych", ru: "Замена шкворней и рулевых тяг", en: "Tie rod ends and kingpins replacement", fr: "Remplacement des rotules", de: "Austausch von Spurstangenköpfen", ua: "Заміна шворнів та рульових тяг" },
+  "srv.cr.s4": { pl: "Ustawianie zbieżności kół", ru: "Регулировка схождения", en: "Wheel alignment", fr: "Géométrie des roues", de: "Achsvermessung", ua: "Регулювання розвал-сходження" },
+  "srv.cr.a1": { pl: "Szybka naprawa", ru: "Оперативный ремонт", en: "Fast repair", fr: "Réparation rapide", de: "Schnelle Reparatur", ua: "Швидкий ремонт" },
+  "srv.cr.a2": { pl: "Niezawodne części", ru: "Надежные запчасти", en: "Reliable parts", fr: "Pièces fiables", de: "Zuverlässige Teile", ua: "Надійні запчастини" },
+  "srv.cr.a3": { pl: "Bezpieczeństwo na drodze", ru: "Безопасность на дороге", en: "Road safety", fr: "Sécurité routière", de: "Sicherheit auf der Straße", ua: "Безпека на дорозі" },
+
+  // --- Brakes (Тормозная система) ---
+  "srv.br.title": { pl: "Układ hamulcowy", ru: "Тормозная система", en: "Brake System", fr: "Système de freinage", de: "Bremssystem", ua: "Гальмівна система" },
+  "srv.br.desc": { pl: "Pełen serwis hamulców dla Twojej ciężarówki i naczepy.", ru: "Полное обслуживание тормозов для вашего тягача и прицепа.", en: "Full brake service for your truck and trailer.", fr: "Service de freinage complet pour votre camion et remorque.", de: "Umfassender Bremsenservice für Ihren LKW und Auflieger.", ua: "Повне обслуговування гальм для вашого тягача та причепа." },
+  "srv.br.s1": { pl: "Wymiana klocków hamulcowych", ru: "Замена тормозных колодок", en: "Brake pad replacement", fr: "Remplacement des plaquettes de frein", de: "Bremsbelagwechsel", ua: "Заміна гальмівних колодок" },
+  "srv.br.s2": { pl: "Regeneracja zacisków", ru: "Ремонт суппортов", en: "Caliper repair", fr: "Réparation des étriers", de: "Bremssattelreparatur", ua: "Ремонт супортів" },
+  "srv.br.s3": { pl: "Przetaczanie tarcz", ru: "Проточка дисков", en: "Brake disc machining", fr: "Usinage des disques", de: "Bremsscheiben abdrehen", ua: "Проточка дисків" },
+  "srv.br.s4": { pl: "Diagnostyka układów ABS/EBS", ru: "Диагностика систем ABS/EBS", en: "ABS/EBS diagnostics", fr: "Diagnostic ABS/EBS", de: "ABS/EBS Diagnose", ua: "Діагностика систем ABS/EBS" },
+  "srv.br.a1": { pl: "Gwarancja poprawnego hamowania", ru: "Гарантия уверенного торможения", en: "Confident braking guarantee", fr: "Garantie de freinage confiant", de: "Garantie für sicheres Bremsen", ua: "Гарантія впевненого гальмування" },
+  "srv.br.a2": { pl: "Testy na stanowisku diagnostycznym", ru: "Проверка на стенде", en: "Diagnostic stand testing", fr: "Essai sur banc de diagnostic", de: "Prüfstand-Tests", ua: "Перевірка на стенді" },
+  "srv.br.a3": { pl: "Certyfikowane płyny hamulcowe", ru: "Сертифицированные жидкости", en: "Certified fluids", fr: "Fluides certifiés", de: "Zertifizierte Bremsflüssigkeiten", ua: "Сертифіковані рідини" },
+
+  // --- Electrics ---
+  "srv.el.title": { pl: "Elektryka", ru: "Электрика", en: "Electrics", fr: "Système électrique", de: "Elektrik", ua: "Електрика" },
+  "srv.el.desc": { pl: "Usuwanie usterek w układach zasilania oraz elektronice pojazdu.", ru: "Устранение неисправностей в электрических цепях и электронике автомобиля.", en: "Troubleshooting electrical circuits and vehicle electronics.", fr: "Dépannage des circuits électriques et de l'électronique du véhicule.", de: "Fehlerbehebung an elektrischen Schaltungen und der Fahrzeugelektronik.", ua: "Усунення несправностей в електричних колах та електроніці автомобіля." },
+  "srv.el.s1": { pl: "Wymiana akumulatorów i sprawdzenie ładowania", ru: "Замена АКБ и проверка зарядки", en: "Battery replacement and charging check", fr: "Remplacement de batterie et test de charge", de: "Batterieaustausch und Ladekontrolle", ua: "Заміна АКБ та перевірка зарядки" },
+  "srv.el.s2": { pl: "Naprawa rozruszników i alternatorów", ru: "Ремонт стартеров и генераторов", en: "Starter and alternator repair", fr: "Réparation des démarreurs et alternateurs", de: "Anlasser- und Lichtmaschinenreparatur", ua: "Ремонт стартерів та генераторів" },
+  "srv.el.s3": { pl: "Naprawa oświetlenia i wiązek", ru: "Ремонт освещения и электропроводки", en: "Lighting and wiring harness repair", fr: "Réparation de l'éclairage et câblage", de: "Reparatur von Beleuchtung und Kabelbaum", ua: "Ремонт освітлення та електропроводки" },
+  "srv.el.s4": { pl: "Sterowniki i moduły", ru: "Блоки управления и модули", en: "ECUs and modules", fr: "Modules et ECUs", de: "Steuergeräte und Module", ua: "Блоки управління та модулі" },
+  "srv.el.a1": { pl: "Precyzyjna diagnoza problemu", ru: "Точное выявление проблемы", en: "Precise problem diagnosis", fr: "Diagnostic précis du problème", de: "Präzise Problemdiagnose", ua: "Точне виявлення проблеми" },
+  "srv.el.a2": { pl: "Użycie schematów producenta", ru: "Использование заводских схем", en: "Use of manufacturer schematics", fr: "Utilisation des schémas d'origine", de: "Nutzung von Hersteller-Schaltplänen", ua: "Використання заводських схем" },
+  "srv.el.a3": { pl: "Zabezpieczenia antykorozyjne", ru: "Антикоррозионная защита контактов", en: "Anti-corrosion terminal protection", fr: "Protection anti-corrosion des contacts", de: "Korrosionsschutz für Kontakte", ua: "Антикорозійний захист контактів" },
+
+  // --- Gearbox ---
+  "srv.gb.title": { pl: "Skrzynia biegów", ru: "Коробка передач", en: "Gearbox", fr: "Boîte de vitesses", de: "Getriebe", ua: "Коробка передач" },
+  "srv.gb.desc": { pl: "Diagnoza i kapitalny remont manualnych oraz automatycznych skrzyń.", ru: "Диагностика и капитальный ремонт ручных и автоматических КПП.", en: "Diagnostics and overhaul of manual and automatic transmissions.", fr: "Diagnostic et révision de transmissions.", de: "Diagnose und Überholung von Getrieben.", ua: "Діагностика та капітальний ремонт ручних та автоматичних КПП." },
+  "srv.gb.s1": { pl: "Wymiana sprzęgła", ru: "Замена сцепления", en: "Clutch replacement", fr: "Remplacement de l'embrayage", de: "Kupplungswechsel", ua: "Заміна зчеплення" },
+  "srv.gb.s2": { pl: "Diagnostyka mechaniczna i elektroniczna", ru: "Механическая и электронная диагностика", en: "Mechanical and electronic diagnostics", fr: "Diagnostics mécaniques et électroniques", de: "Mechanische und elektronische Diagnose", ua: "Механічна та електронна діагностика" },
+  "srv.gb.s3": { pl: "Wymiana łożysk i uszczelniaczy", ru: "Замена подшипников и сальников", en: "Bearing and seal replacement", fr: "Remplacement des roulements", de: "Lager- und Dichtungsaustausch", ua: "Заміна підшипників та сальників" },
+  "srv.gb.s4": { pl: "Kalibracja automatycznych skrzyń", ru: "Калибровка автоматических КПП", en: "Automatic gearbox calibration", fr: "Calibrage boîte automatique", de: "Kalibrierung von Automatikgetrieben", ua: "Калібрування автоматичних КПП" },
+
+  // --- Pneumatics ---
+  "srv.pn.title": { pl: "Pneumatyka", ru: "Пневматика", en: "Pneumatics", fr: "Pneumatique", de: "Pneumatik", ua: "Пневматика" },
+  "srv.pn.desc": { pl: "Usuwanie niesprawności systemów powietrznych w ciągnikach i naczepach.", ru: "Устранение неисправностей воздушных систем тягачей и прицепов.", en: "Troubleshooting air systems for tractors and trailers.", fr: "Dépannage des systèmes d'air.", de: "Behebung von Fehlern in den Luftsystemen.", ua: "Усунення несправностей повітряних систем тягачів та причепів." },
+  "srv.pn.s1": { pl: "Sprawdzanie szczelności", ru: "Проверка на утечки воздуха", en: "Air leak checking", fr: "Vérification des fuites d'air", de: "Prüfung auf Luftlecks", ua: "Перевірка на витоки повітря" },
+  "srv.pn.s2": { pl: "Naprawa kompresorów", ru: "Ремонт компрессоров", en: "Compressor repair", fr: "Réparation des compresseurs", de: "Kompressorreparatur", ua: "Ремонт компресорів" },
+  "srv.pn.s3": { pl: "Wymiana zaworów i osuszaczy", ru: "Замена кранов и осушителей", en: "Validation valves and air dryers replacement", fr: "Changement de valves et déshydrateurs", de: "Austausch von Ventilen und Lufttrocknern", ua: "Заміна кранів та осушувачів" },
+  "srv.pn.s4": { pl: "Resetowanie wskazań błędów", ru: "Снятие ошибок системы", en: "System error reset", fr: "Réinitialisation des erreurs", de: "Zurücksetzen von Systemfehlern", ua: "Зняття помилок системи" },
+
+  // --- Service Checks ---
+  "srv.sc.title": { pl: "Przeglądy", ru: "Сервисные осмотры", en: "Service Checks", fr: "Entretiens", de: "Service-Inspektionen", ua: "Сервісні огляди" },
+  "srv.sc.desc": { pl: "Okresowe przeglądy techniczne flot samochodów ciężarowych.", ru: "Регулярные техосмотры для поддержания парка в идеальном состоянии.", en: "Regular technical checks to keep the fleet in top condition.", fr: "Contrôles techniques réguliers de la flotte.", de: "Regelmäßige Inspektion für LKW-Flotten.", ua: "Регулярні техогляди для підтримання парку в ідеальному стані." },
+  "srv.sc.s1": { pl: "Wymiana oleju i filtrów", ru: "Замена масла и фильтров", en: "Oil and filter replacement", fr: "Vidange d'huile et filtres", de: "Öl- und Filterwechsel", ua: "Заміна масла та фільтрів" },
+  "srv.sc.s2": { pl: "Smarowanie punktów i podzespołów", ru: "Шприцевание узлов", en: "Greasing and lubrication points", fr: "Graissage des pièces", de: "Abschmieren von Bauteilen", ua: "Шприцювання вузлів" },
+  "srv.sc.s3": { pl: "Audyt techniczny pojazdu", ru: "Полный технический аудит", en: "Full technical audit", fr: "Audit technique complet", de: "Vollständiges technisches Gutachten", ua: "Повний технічний аудит" },
+  "srv.sc.s4": { pl: "Przygotowanie do przeglądu UDT", ru: "Подготовка к сертификации", en: "Preparation for certification", fr: "Préparation pour la certification", de: "Vorbereitung auf Zertifizierungen", ua: "Підготовка до сертифікації" },
+
+  // --- Buses ---
+  "srv.bs.title": { pl: "Autobusy", ru: "Автобусы", en: "Buses", fr: "Bus", de: "Busse", ua: "Автобуси" },
+  "srv.bs.desc": { pl: "Zaawansowany serwis i naprawa autokarów na najwyższym poziomie.", ru: "Передовое обслуживание и ремонт автобусов всех конфигураций.", en: "Advanced maintenance and repair for buses of all configurations.", fr: "Maintenance et réparation avancées pour les bus.", de: "Erweiterte Wartung und Reparatur für Busse.", ua: "Передове обслуговування та ремонт автобусів усіх конфігурацій." },
+  "srv.bs.s1": { pl: "Naprawa systemów drzwi", ru: "Сервис дверных механизмов", en: "Door mechanism service", fr: "Réparation des mécanismes de portes", de: "Wartung der Türmechanismen", ua: "Сервіс дверних механізмів" },
+  "srv.bs.s2": { pl: "Diagnostyka układów klimatyzacji", ru: "Диагностика систем кондиционирования", en: "AC system diagnostics", fr: "Diagnostic de la climatisation", de: "Diagnose der Klimaanlage", ua: "Діагностика систем кондиціонування" },
+  "srv.bs.s3": { pl: "Zawieszenie poziomujące", ru: "Ремонт пневмосистемы уровня пола", en: "Leveling suspension repair", fr: "Réparation de la suspension de mise à niveau", de: "Reparatur der Niveauregulierung", ua: "Ремонт пневмосистеми рівня підлоги" },
+  "srv.bs.s4": { pl: "Generalne przeglądy wnętrz", ru: "Комплексные осмотры технического состояния", en: "Comprehensive technical inspections", fr: "Inspections techniques générales", de: "Umfassende technische Inspektion", ua: "Комплексні огляди технічного стану" },
+
+  // --- Agriculture Tech ---
+  "srv.ag.title": { pl: "Maszyny rolnicze", ru: "Сельхозтехника", en: "Agricultural Tech", fr: "Machines agricoles", de: "Landmaschinen", ua: "Сільгосптехніка" },
+  "srv.ag.desc": { pl: "Profesjonalna naprawa maszyn rolniczych minimalizująca przestoje w polu.", ru: "Профессиональный ремонт сельскохозяйственной техники для сезона.", en: "Pro repair of agricultural machinery to minimize field downtime.", fr: "Réparation pro de matériel agricole pour la saison.", de: "Professionelle Reparatur von Landmaschinen.", ua: "Професійний ремонт сільськогосподарської техніки." },
+  "srv.ag.s1": { pl: "Serwis silników i hydrauliki", ru: "Обслуживание двигателей и гидравлики", en: "Engine and hydraulics service", fr: "Entretien des moteurs et de l'hydraulique", de: "Motor- und Hydraulikservice", ua: "Обслуговування двигунів та гідравліки" },
+  "srv.ag.s2": { pl: "Regeneracja podzespołów zębatych", ru: "Ремонт редукторов и передач", en: "Gearbox and transmission repair", fr: "Réparation des engrenages", de: "Getriebereparatur", ua: "Ремонт редукторів та передач" },
+  "srv.ag.s3": { pl: "Klimatyzacja kabin", ru: "Сервис кондиционеров тракторов", en: "Tractor AC servicing", fr: "Climatisation des tracteurs", de: "Klimaservice für Traktoren", ua: "Сервіс кондиціонерів тракторів" },
+  "srv.ag.s4": { pl: "Części rolnicze i zamienniki", ru: "Поиск аналогов и узлов", en: "Finding part replacements", fr: "Recherche de pièces", de: "Beschaffung von Ersatzteilen", ua: "Пошук аналогів та вузлів" },
+
+  // --- Spare Parts ---
+  "srv.pt.title": { pl: "Części zamienne", ru: "Запчасти", en: "Spare Parts", fr: "Pièces de rechange", de: "Ersatzteile", ua: "Запчастини" },
+  "srv.pt.desc": { pl: "Tylko oficjalne dostawy. Gwarantujemy najszerszy dostępny wybór komponentów.", ru: "Только сертифицированные детали с гарантией напрямую со склада.", en: "Only certified parts with a warranty direct from the warehouse.", fr: "Uniquement des pièces certifiées en stock.", de: "Nur zertifizierte Teile mit Garantie direkt ab Lager.", ua: "Тільки сертифіковані деталі з гарантією безпосередньо зі складу." },
+  "srv.pt.s1": { pl: "Dostępność na miejscu", ru: "Широкое наличие на складе", en: "Wide stock availability", fr: "Disponibilité en stock", de: "Große Lagerverfügbarkeit", ua: "Широка наявність на складі" },
+  "srv.pt.s2": { pl: "Dobór po VIN", ru: "Подбор по VIN-коду автомобилей", en: "VIN-based part matching", fr: "Sélection de pièces par VIN", de: "Ersatzteilbestellung nach VIN", ua: "Підбір за VIN-кодом" },
+  "srv.pt.s3": { pl: "Części oryginalne OE", ru: "Оригинальные заводские запчасти", en: "Original factory parts (OE)", fr: "Pièces d'origine (OE)", de: "Original-Ersatzteile (OE)", ua: "Оригінальні заводські запчастини" },
+  "srv.pt.s4": { pl: "Sprzedaż zamienników premium", ru: "Сотрудничество с лучшими аналогами", en: "Working with premium alternative brands", fr: "Pièces de marques alternatives", de: "Teile von Premium-Zubehörmarken", ua: "Співпраця з кращими аналогами" },
+  "srv.pt.a1": { pl: "Bezproblemowa gwarancja", ru: "Гарантия на каждую деталь", en: "Warranty per part", fr: "Garantie de qualité", de: "Teilegarantie", ua: "Гарантія на кожну деталь" },
+  "srv.pt.a2": { pl: "Natychmiastowa instalacja", ru: "Возможность быстрой установки", en: "Fast installation available", fr: "Installation rapide", de: "Schnelle Installation möglich", ua: "Можливість швидкого встановлення" },
+  "srv.pt.a3": { pl: "Optymalizacja kosztów serwisu", ru: "Оптимизация бюджета на ремонт", en: "Repair budget optimization", fr: "Optimisation de votre budget", de: "Optimierung des Reparaturbudgets", ua: "Оптимізація бюджету на ремонт" },
+
+
   // Nav
   "nav.services": { pl: "Usługi", ru: "Услуги", en: "Services", fr: "Services", de: "Leistungen", ua: "Послуги" },
   "nav.whyUs": { pl: "Dlaczego my", ru: "Почему мы", en: "Why us", fr: "Pourquoi nous", de: "Warum wir", ua: "Чому ми" },

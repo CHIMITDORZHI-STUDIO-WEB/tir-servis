@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useApp } from "@/contexts/AppContext";
 import { LANG_LABELS, LANG_NAMES, Lang } from "@/i18n/translations";
 
@@ -17,6 +18,17 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
   const langs: Lang[] = ["pl", "ru", "en", "fr", "de", "ua"];
+  const location = useLocation();
+
+  // Scroll to hash on load or location change
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(location.hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <div className="min-h-screen theme-bg theme-text">
@@ -37,16 +49,44 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* Sticky header */}
       <header className="sticky top-0 z-50 theme-bg-secondary backdrop-blur-sm theme-border border-b shadow-lg" style={{ backgroundColor: `color-mix(in srgb, var(--bg-secondary) 95%, transparent)` }}>
         <div className="container mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
-          <a href="/" className="text-lg sm:text-2xl font-bold theme-text flex-shrink-0">
+          <Link to="/" className="text-lg sm:text-2xl font-bold theme-text flex-shrink-0">
             <span className="text-red-500">TIR</span> Serwis
-          </a>
+          </Link>
 
-          <nav className="hidden lg:flex items-center gap-5 text-sm">
-            <a href="#uslugi" className="hover:text-red-500 transition">{t("nav.services")}</a>
-            <a href="#dlaczego-my" className="hover:text-red-500 transition">{t("nav.whyUs")}</a>
-            <a href="#galeria" className="hover:text-red-500 transition">{t("nav.gallery")}</a>
-            <a href="#opinie" className="hover:text-red-500 transition">{t("nav.reviews")}</a>
-            <a href="#kontakt" className="hover:text-red-500 transition">{t("nav.contact")}</a>
+          <nav className="hidden lg:flex items-center gap-4 text-sm xl:gap-5">
+            <div className="relative group pt-4 pb-4 -my-4">
+              <span className="hover:text-red-500 transition cursor-pointer flex items-center gap-1 font-medium">{t("nav.repairTrucks")} <ChevronDownIcon /></span>
+              <div className="absolute left-0 top-full mt-0 hidden group-hover:block z-50 theme-bg-secondary theme-border border rounded-lg shadow-xl py-2 min-w-[240px]">
+                <Link to="/service/computer-diagnostics" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.cd.title")}</Link>
+                <Link to="/service/engine-repair" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.er.title")}</Link>
+                <Link to="/service/chassis-repair" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.cr.title")}</Link>
+                <Link to="/service/brakes-system" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.br.title")}</Link>
+                <Link to="/service/electrics" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.el.title")}</Link>
+              </div>
+            </div>
+            <Link to="/#uslugi" className="hover:text-red-500 transition font-medium">{t("nav.repairTrailers")}</Link>
+            <Link to="/#uslugi" className="hover:text-red-500 transition font-medium">{t("nav.repairTractors")}</Link>
+            <Link to="/#uslugi" className="hover:text-red-500 transition font-medium">{t("nav.repairBody")}</Link>
+            <Link to="/#uslugi" className="text-red-500 transition font-bold">{t("nav.laserCleaning")}</Link>
+
+            <div className="relative group pt-4 pb-4 -my-4">
+              <span className="hover:text-red-500 transition cursor-pointer flex items-center gap-1 font-medium">{t("nav.otherServices")} <ChevronDownIcon /></span>
+              <div className="absolute left-0 top-full mt-0 hidden group-hover:block z-50 theme-bg-secondary theme-border border rounded-lg shadow-xl py-2 min-w-[240px]">
+                <Link to="/service/gearbox" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.gb.title")}</Link>
+                <Link to="/service/pneumatics" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.pn.title")}</Link>
+                <Link to="/service/service-checks" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.sc.title")}</Link>
+                <Link to="/service/buses" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.bs.title")}</Link>
+                <Link to="/service/agri" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.ag.title")}</Link>
+                <Link to="/service/parts" className="block px-4 py-2 hover:bg-red-500/10 transition">{t("srv.pt.title")}</Link>
+              </div>
+            </div>
+
+            <div className="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-1"></div>
+
+            <Link to="/#o-nas" className="hover:text-red-500 transition">{t("nav.about")}</Link>
+            <Link to="/#galeria" className="hover:text-red-500 transition">{t("nav.gallery")}</Link>
+            <Link to="/#opinie" className="hover:text-red-500 transition">{t("nav.reviews")}</Link>
+            <Link to="/#kontakt" className="hover:text-red-500 transition">{t("nav.contact")}</Link>
           </nav>
 
           <div className="flex items-center gap-1.5 sm:gap-2">
@@ -97,15 +137,16 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="lg:hidden theme-bg-secondary theme-border border-t pb-4 px-4">
             <nav className="flex flex-col gap-0.5 pt-2">
               {[
-                { href: "#uslugi", label: t("nav.services") },
-                { href: "#dlaczego-my", label: t("nav.whyUs") },
-                { href: "#galeria", label: t("nav.gallery") },
-                { href: "#opinie", label: t("nav.reviews") },
-                { href: "#kontakt", label: t("nav.contact") },
+                { to: "/#uslugi", label: t("nav.repairTrucks") },
+                { to: "/#uslugi", label: t("nav.repairTrailers") },
+                { to: "/#o-nas", label: t("nav.about") },
+                { to: "/#galeria", label: t("nav.gallery") },
+                { to: "/#opinie", label: t("nav.reviews") },
+                { to: "/#kontakt", label: t("nav.contact") },
               ].map((item) => (
-                <a key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)} className="py-3 px-4 rounded-lg hover:bg-red-500/10 transition text-base font-medium active:bg-red-500/20">
+                <Link key={item.to} to={item.to} onClick={() => setMobileMenuOpen(false)} className="py-3 px-4 rounded-lg hover:bg-red-500/10 transition text-base font-medium active:bg-red-500/20">
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
             <div className="mt-3 flex gap-2">
