@@ -144,6 +144,16 @@ const t: Translations = {
   "footer.contactData": { pl: "Dane kontaktowe", ru: "Контактные данные", en: "Contact details", fr: "Coordonnées", de: "Kontaktdaten", ua: "Контактні дані" },
   "footer.writeUs": { pl: "Napisz do nas", ru: "Напишите нам", en: "Write to us", fr: "Écrivez-nous", de: "Schreiben Sie uns", ua: "Напишіть нам" },
 
+  // Marquee
+  "marquee.noQueue": { pl: "Bez kolejki", ru: "Без очереди", en: "No queue", fr: "Sans attente", de: "Ohne Wartezeit", ua: "Без черги" },
+  "marquee.warranty": { pl: "Gwarancja na usługi", ru: "Гарантия на услуги", en: "Service warranty", fr: "Garantie de service", de: "Servicegarantie", ua: "Гарантія на послуги" },
+  "marquee.trucksAndCars": { pl: "TIR-y i osobówki", ru: "Грузовые и легковые", en: "Trucks & cars", fr: "Camions & voitures", de: "LKW & PKW", ua: "Вантажівки та легкові" },
+  "marquee.fairPrices": { pl: "Uczciwe ceny", ru: "Честные цены", en: "Fair prices", fr: "Prix honnêtes", de: "Faire Preise", ua: "Чесні ціни" },
+  "marquee.mobileService": { pl: "Serwis mobilny", ru: "Мобильный сервис", en: "Mobile service", fr: "Service mobile", de: "Mobiler Service", ua: "Мобільний сервіс" },
+  "marquee.daily": { pl: "Codziennie 8-20", ru: "Ежедневно 8-20", en: "Daily 8-20", fr: "Chaque jour 8-20", de: "Täglich 8-20", ua: "Щоденно 8-20" },
+  "marquee.experience": { pl: "10+ lat doświadczenia", ru: "10+ лет опыта", en: "10+ years experience", fr: "10+ ans d'expérience", de: "10+ Jahre Erfahrung", ua: "10+ років досвіду" },
+  "marquee.tireStorage": { pl: "Przechowywanie opon", ru: "Хранение шин", en: "Tire storage", fr: "Stockage de pneus", de: "Reifenlagerung", ua: "Зберігання шин" },
+
   // Theme
   "theme.light": { pl: "Jasny", ru: "Светлая", en: "Light", fr: "Clair", de: "Hell", ua: "Світла" },
   "theme.dark": { pl: "Ciemny", ru: "Тёмная", en: "Dark", fr: "Sombre", de: "Dunkel", ua: "Темна" },
