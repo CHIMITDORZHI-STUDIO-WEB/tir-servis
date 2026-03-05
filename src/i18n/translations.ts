@@ -152,7 +152,7 @@ const t: Translations = {
   "marquee.mobileService": { pl: "Serwis mobilny", ru: "Мобильный сервис", en: "Mobile service", fr: "Service mobile", de: "Mobiler Service", ua: "Мобільний сервіс" },
   "marquee.daily": { pl: "Codziennie 8-20", ru: "Ежедневно 8-20", en: "Daily 8-20", fr: "Chaque jour 8-20", de: "Täglich 8-20", ua: "Щоденно 8-20" },
   "marquee.experience": { pl: "10+ lat doświadczenia", ru: "10+ лет опыта", en: "10+ years experience", fr: "10+ ans d'expérience", de: "10+ Jahre Erfahrung", ua: "10+ років досвіду" },
-  "marquee.tireStorage": { pl: "Przechowywanie opon", ru: "Хранение шин", en: "Tire storage", fr: "Stockage de pneus", de: "Reifenlagerung", ua: "Зберігання шин" },
+  "marquee.diagnostics": { pl: "Profesjonalna diagnostyka", ru: "Профессиональная диагностика", en: "Professional diagnostics", fr: "Diagnostic professionnel", de: "Professionelle Diagnose", ua: "Професійна діагностика" },
 
   // Theme
   "theme.light": { pl: "Jasny", ru: "Светлая", en: "Light", fr: "Clair", de: "Hell", ua: "Світла" },
